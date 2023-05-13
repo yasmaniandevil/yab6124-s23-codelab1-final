@@ -6,6 +6,10 @@ using Random = UnityEngine.Random;
 
 public class Interactions : MonoBehaviour
 {
+    
+}
+/*
+{
 
     public GameObject enemyGO;
     public GameObject enemyPrefab;
@@ -19,10 +23,10 @@ public class Interactions : MonoBehaviour
     private EnemyBase monsters1 = new Monster2(9, 10, 15, "bye bye");
     
     
-    public virtual void SpawnEnemy()
+    public virtual void SpawnEnemy(GameObject enemyGO)
     {
         Vector2 randomPosition = new Vector2(Random.Range(xMin, xMax), Random.Range(yMin, yMax));
-        enemyGO = Instantiate(enemyPrefab, randomPosition, Quaternion.identity);
+        enemyGO.transform.position = randomPosition;
         EnemyBase enemy = enemyGO.GetComponent<EnemyBase>();
         Monster1 monster = enemyGO.GetComponent<Monster1>();
         if (monster != null)
@@ -37,7 +41,7 @@ public class Interactions : MonoBehaviour
     }
     
     
-    public virtual void EnemyMovement()
+    public virtual void EnemyMovement(GameObject enemyGO)
     {
         Transform enemyTransform = enemyGO.GetComponent<Transform>();
         enemyTransform.position = new Vector2(enemyTransform.position.x, enemyTransform.position.y- (Time.deltaTime));
@@ -47,20 +51,28 @@ public class Interactions : MonoBehaviour
 
     private void Update()
     {
-        EnemyMovement();
+        foreach (GameObject monsterGO in MonstersList)
+        {
+            EnemyMovement(monsterGO);
+        }
+        
     }
 
     private void Start()
     {
-        monsters1 = Instantiate(new Monster1(7, 9, 8, "hi"), Vector2.zero, Quaternion.identity);
+        GameObject monster1GO = Instantiate(enemyPrefab, Vector2.zero, Quaternion.identity);
+        Monster1 monster1 = monster1GO.GetComponent<Monster1>();
+        MonstersList.Add(monster1GO);
 
+        GameObject monster2GO = Instantiate(enemyPrefab, Vector2.zero, Quaternion.identity);
+        Monster2 monster2 = monster2GO.GetComponent<Monster2>();
+        MonstersList.Add(monster2GO);
 
-        /*for (int i = 0; i < MonstersList.Count; i++)
+        foreach (GameObject monsterGO in MonstersList)
         {
-            MonstersList.Add(GameObject.Find("Monster"));
-        }*/
-        
-        SpawnEnemy();
+            SpawnEnemy(monsterGO);
+        }
+
     }
-}
+}*/
 

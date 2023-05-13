@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster1 : EnemyBase
+public class Monster1 : EnemyBase2
 {
 
     public string mes;

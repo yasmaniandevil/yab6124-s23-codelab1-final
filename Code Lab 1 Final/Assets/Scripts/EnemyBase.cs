@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EnemyBase 
+public class EnemyBase   
 {
 
     public int damage;

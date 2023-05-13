@@ -248,16 +248,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1455242425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe6fafab9a4f7749b3e81d57c04ca51, type: 3}
+  m_Script: {fileID: 11500000, guid: 406551d414c8e104fbf697a04ed011c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyGO: {fileID: 0}
+  damage: 0
+  health: 0
   enemyPrefab: {fileID: 2389105066930398933, guid: f1891d95fb805cb46918bb5f5e6476d2, type: 3}
-  speed: 0
-  xMin: 0
-  xMax: 0
-  yMin: 0
-  yMax: 0
+  speed: 3
+  xMin: -8
+  xMax: 8
+  yMin: -3
+  yMax: 3
 --- !u!1 &1666987100
 GameObject:
   m_ObjectHideFlags: 0

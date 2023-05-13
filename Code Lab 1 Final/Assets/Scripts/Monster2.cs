@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster2 : EnemyBase
+public class Monster2 :  EnemyBase2
 {
 
     public string message2;
@@ -19,7 +19,7 @@ public class Monster2 : EnemyBase
         
     }
 
-    public Monster2(int health, int damage, int speed, string message2) : base(damage, health, speed)
+    public Monster2(int health, int damage, int speed, string message2) : base(health, damage, speed)
     {
         this.message2 = message2;
     }
