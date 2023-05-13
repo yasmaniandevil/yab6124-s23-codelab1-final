@@ -25,34 +25,28 @@ public class PlayerControlls : MonoBehaviour
         //multiple by force amount
         if (Input.GetKey(KeyCode.W))
         {
-            //rb.AddForce(Vector2.up * forceAmount);
-            //Stop();
-
-            transform.position = new Vector2(forceAmount * Time.deltaTime, 0);
+            rb.AddForce(Vector2.up * forceAmount);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             rb.AddForce(Vector2.down * forceAmount);
-            //Stop();
+            
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(Vector2.left * forceAmount);
-            //Stop();
+            
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(Vector2.right * forceAmount);
-            //Stop();
+            
         }
-    }
 
-    void Stop()
-    {
-        rb.velocity = Vector2.zero;
-        rb.inertia = 0f;
+        rb.velocity *= .99f; //so the player doesnt continue to move after being pressed, slows down the velocity
     }
+    
 }
