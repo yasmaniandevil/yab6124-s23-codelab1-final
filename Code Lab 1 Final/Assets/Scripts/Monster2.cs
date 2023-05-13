@@ -23,4 +23,12 @@ public class Monster2 :  EnemyBase2
     {
         this.message2 = message2;
     }
+    
+    public void SetStats(int damage, int health, int speed, string message2)
+    {
+        this.damage = damage;
+        this.health = health;
+        this.speed = speed;
+        this.message2 = message2;
+    }
 }
