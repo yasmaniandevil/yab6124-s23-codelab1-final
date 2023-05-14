@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2389105066930398936}
   - component: {fileID: 2389105066930398935}
   - component: {fileID: 1664621986563364224}
+  - component: {fileID: 6997406045850741829}
   m_Layer: 0
   m_Name: Monster1
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,3 +112,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6997406045850741829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2389105066930398933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f28422e8627b4c41b9ba18385166c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  health: 0
+  speed: 0
+  xMin: 0
+  xMax: 0
+  yMin: 0
+  yMax: 0
+  enemyPrefab: {fileID: 2389105066930398933}
+  enemyGO: {fileID: 0}
+  name1: 

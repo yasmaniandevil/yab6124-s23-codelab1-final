@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EnemyBase   
+public class EnemyBase: MonoBehaviour  
 {
 
     public int damage;
@@ -29,10 +30,10 @@ public class EnemyBase
         this.health = health;
         this.speed = speed;
     }
-    /*public virtual void SpawnEnemy()
+    public void SpawnEnemy()
     {
-        Vector2 randomPosition = new Vector2(Random.Range(xMin, xMax), Random.Range(yMin, yMax));
-        enemyGO = Instantiate(enemyPrefab, randomPosition, Quaternion.identity);
+        Vector2 randomPosition = new Vector2(Random.Range(-8, 8), Random.Range(-3, 3));
+        Instantiate(enemyPrefab, randomPosition, quaternion.identity);
         EnemyBase enemy = enemyGO.GetComponent<EnemyBase>();
         Monster1 monster = enemyGO.GetComponent<Monster1>();
         if (monster != null)
@@ -44,15 +45,15 @@ public class EnemyBase
         {
             enemy.EnemyMovement();
         }
-    }*/
+    }
     
-    /*public virtual void EnemyMovement()
+    public void EnemyMovement()
     {
         Transform enemyTransform = enemyGO.GetComponent<Transform>();
         enemyTransform.position = new Vector2(enemyTransform.position.x, enemyTransform.position.y- (speed * Time.deltaTime));
         Debug.Log("enemyPrefab" + enemyPrefab.transform.position);
         Debug.Log("newVector2" + new Vector2());
-    }*/
+    }
 
     public virtual void OnCollisionEnter2D(Collision2D col)
     {
@@ -62,12 +63,12 @@ public class EnemyBase
     // Start is called before the first frame update
     void Start()
     {
-        //SpawnEnemy();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //EnemyMovement();
+        
     }
 }

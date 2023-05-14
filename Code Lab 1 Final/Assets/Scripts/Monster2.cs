@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster2 :  EnemyBase2
+public class Monster2 :  EnemyBase
 {
 
     public string message2;
@@ -10,7 +10,7 @@ public class Monster2 :  EnemyBase2
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetStats(9, 10, 15, "bye bye");
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class Monster2 :  EnemyBase2
         this.message2 = message2;
     }
     
-    public void SetStats(int damage, int health, int speed, string message2)
+    public void SetStats(int health, int damage, int speed, string message2)
     {
         this.damage = damage;
         this.health = health;
