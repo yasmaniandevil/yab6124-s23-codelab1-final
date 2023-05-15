@@ -16,6 +16,9 @@ public class EnemyBase: MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject enemyGO;
 
+    private bool hasSpawned;
+    //private GameObject enemyGO;
+
     public EnemyBase()
     {
         damage = 0;
@@ -30,34 +33,38 @@ public class EnemyBase: MonoBehaviour
         this.health = health;
         this.speed = speed;
     }
-    public void SpawnEnemy()
+    public GameObject SpawnEnemy()
     {
         Vector2 randomPosition = new Vector2(Random.Range(-8, 8), Random.Range(-3, 3));
-        Instantiate(enemyPrefab, randomPosition, quaternion.identity);
-        EnemyBase enemy = enemyGO.GetComponent<EnemyBase>();
-        Monster1 monster = enemyGO.GetComponent<Monster1>();
-        if (monster != null)
+        GameObject enemyGO = Instantiate(enemyPrefab, randomPosition, 
+            quaternion.identity);
+
+        return enemyGO;
+        /*EnemyBase enemy = enemyGO.GetComponent<EnemyBase>();
+        Monster1 monster1 = enemyGO.GetComponent<Monster1>();
+        Monster2 monster2 = enemyGO.GetComponent<Monster2>();
+        if (monster1 || monster2 != null)
         {
-            enemy = monster;
-        }
-        //if enemy is not null then do enemy movement
-        if (enemy != null)
-        {
-            enemy.EnemyMovement();
-        }
+            enemy = monster1;
+            enemy = monster2;
+        }*/
     }
     
     public void EnemyMovement()
     {
-        Transform enemyTransform = enemyGO.GetComponent<Transform>();
-        enemyTransform.position = new Vector2(enemyTransform.position.x, enemyTransform.position.y- (speed * Time.deltaTime));
-        Debug.Log("enemyPrefab" + enemyPrefab.transform.position);
-        Debug.Log("newVector2" + new Vector2());
+        //Transform enemyTransform = enemyPrefab.GetComponent<Transform>();
+        //enemyTransform.position = new Vector2(enemyTransform.position.x, enemyTransform.position.y- (speed * Time.deltaTime));
+        //Debug.Log("enemyPrefab" + enemyPrefab.transform.position);
+        //Debug.Log("newVector2" + new Vector2());
+
+        transform.position = new Vector2(
+            transform.position.x, transform.position.y + (speed * Time.deltaTime));
     }
 
     public virtual void OnCollisionEnter2D(Collision2D col)
     {
        Debug.Log("Collided");
+       Destroy(enemyPrefab);
     }
 
     // Start is called before the first frame update

@@ -7,7 +7,11 @@ using Random = UnityEngine.Random;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public GameObject objectwithScript;
+    public GameObject Monster1;
+    public GameObject Monster2;
+
+    public List<GameObject> MonsterList = new List<GameObject>();
+    public List<GameObject> CloneList = new List<GameObject>();
     private void Awake()
     {
         if (instance == null)
@@ -21,30 +25,44 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public List<GameObject> MonsterList;
-    private int AmountEnemy = 10;
     
+    //private int AmountEnemy = 10;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-        
-        MonsterList = new List<GameObject>();
-        MonsterList.Add(GameObject.Find("Enemy"));
-        MonsterList.Add(GameObject.Find("Monster1"));
-        for (int i = 0; i < AmountEnemy; i++)
+        //MonsterList.Add((Monster1));
+        //MonsterList.Add((Monster2));
+
+        //Invoke("spawnOb", 5f);
+
+        for (int i = 0; i < MonsterList.Count; i++)
         {
 
-            objectwithScript.GetComponent<Monster1>().SpawnEnemy();
-            objectwithScript.GetComponent<Monster1>().EnemyMovement();
-            Debug.Log("AmountEnemy" + AmountEnemy);
+            //go to the first thing in the list
+            GameObject currentObj = MonsterList[i];
+            
+            CloneList.Add(currentObj.GetComponent<EnemyBase>().SpawnEnemy());
 
         }
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        /*for (int i = 0; i < MonsterList.Count; i++)
+        {
+
+            GameObject currentObj = MonsterList[i];
+
+            Monster1.GetComponent<EnemyBase>().EnemyMovement();
+        }*/
+
+        foreach (GameObject monster in CloneList)
+        {
+            monster.GetComponent<EnemyBase>().EnemyMovement();
+        }
     }
 }

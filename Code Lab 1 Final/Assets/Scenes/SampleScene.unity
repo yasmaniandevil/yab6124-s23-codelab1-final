@@ -237,6 +237,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171c4ad654d27ff4fa45a7a78a2dfdb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Monster1: {fileID: 7045727705648835323, guid: 558ae76e201300d4e80c242873fd0ecd, type: 3}
+  Monster2: {fileID: 2389105066930398933, guid: f1891d95fb805cb46918bb5f5e6476d2, type: 3}
+  MonsterList: []
 --- !u!114 &1666987102
 MonoBehaviour:
   m_ObjectHideFlags: 0
