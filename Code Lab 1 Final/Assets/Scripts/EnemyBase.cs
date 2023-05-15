@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -15,6 +16,7 @@ public class EnemyBase: MonoBehaviour
     public int yMin, yMax;
     public GameObject enemyPrefab;
     public GameObject enemyGO;
+    public TextMesh healthText;
 
     
     //private GameObject enemyGO;
@@ -70,7 +72,7 @@ public class EnemyBase: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        healthText.text = "Health" + health;
     }
 
     // Update is called once per frame

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2389105066930398935}
   - component: {fileID: 1664621986563364224}
   - component: {fileID: 6549253128920677007}
-  - component: {fileID: -6824775748780708678}
   - component: {fileID: -7076681774572040541}
   m_Layer: 0
   m_Name: Monster 2
@@ -32,7 +31,8 @@ Transform:
   m_LocalPosition: {x: 2, y: -241.7507, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2316380757404403804}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  health: 0
+  health: 20
   speed: 0
   xMin: 0
   xMax: 0
@@ -135,33 +135,8 @@ MonoBehaviour:
   yMax: 0
   enemyPrefab: {fileID: 2389105066930398933}
   enemyGO: {fileID: 0}
+  healthText: {fileID: 246042874644883617, guid: a85e4e9439131024898ebcce089d58a7, type: 3}
   message2: 
---- !u!61 &-6824775748780708678
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2389105066930398933}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.21133333}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!50 &-7076681774572040541
 Rigidbody2D:
   serializedVersion: 4
@@ -183,3 +158,69 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1001 &84074750175595975
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2389105066930398936}
+    m_Modifications:
+    - target: {fileID: 246042874644883617, guid: a85e4e9439131024898ebcce089d58a7, type: 3}
+      propertyPath: m_Text
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382335537146496411, guid: a85e4e9439131024898ebcce089d58a7, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382335537146496411, guid: a85e4e9439131024898ebcce089d58a7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382335537146496411, guid: a85e4e9439131024898ebcce089d58a7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382335537146496411, guid: a85e4e9439131024898ebcce089d58a7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.03893311
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382335537146496411, guid: a85e4e9439131024898ebcce089d58a7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382335537146496411, guid: a85e4e9439131024898ebcce089d58a7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382335537146496411, guid: a85e4e9439131024898ebcce089d58a7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382335537146496411, guid: a85e4e9439131024898ebcce089d58a7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382335537146496411, guid: a85e4e9439131024898ebcce089d58a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382335537146496411, guid: a85e4e9439131024898ebcce089d58a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382335537146496411, guid: a85e4e9439131024898ebcce089d58a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024532284527976222, guid: a85e4e9439131024898ebcce089d58a7, type: 3}
+      propertyPath: m_Name
+      value: Monster 2 Text
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a85e4e9439131024898ebcce089d58a7, type: 3}
+--- !u!4 &2316380757404403804 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2382335537146496411, guid: a85e4e9439131024898ebcce089d58a7, type: 3}
+  m_PrefabInstance: {fileID: 84074750175595975}
+  m_PrefabAsset: {fileID: 0}
