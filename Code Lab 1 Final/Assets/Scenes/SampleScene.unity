@@ -237,9 +237,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171c4ad654d27ff4fa45a7a78a2dfdb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster1: {fileID: 7045727705648835323, guid: 558ae76e201300d4e80c242873fd0ecd, type: 3}
-  Monster2: {fileID: 2389105066930398933, guid: f1891d95fb805cb46918bb5f5e6476d2, type: 3}
-  MonsterList: []
+  MonsterList:
+  - {fileID: 7045727705648835323, guid: 558ae76e201300d4e80c242873fd0ecd, type: 3}
+  - {fileID: 2389105066930398933, guid: f1891d95fb805cb46918bb5f5e6476d2, type: 3}
+  - {fileID: 2389105066930398933, guid: f1891d95fb805cb46918bb5f5e6476d2, type: 3}
+  - {fileID: 2389105066930398933, guid: f1891d95fb805cb46918bb5f5e6476d2, type: 3}
+  CloneList: []
 --- !u!114 &1666987102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wall: {fileID: 1914502792223738073, guid: 17e8cfa6d3316794883515b93e755585, type: 3}
   player: {fileID: 9119116768610404091, guid: c4d6ef4a16bb0c14a979025f8fa6bfd9, type: 3}
+  door: {fileID: 3895491573629649813, guid: 95dc7c00764edeb4688bbd581a0b810a, type: 3}
   xOffset: -7
   yOffset: 4
 --- !u!4 &1666987103

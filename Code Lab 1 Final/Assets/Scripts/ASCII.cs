@@ -9,18 +9,20 @@ public class ASCII : MonoBehaviour
 
     public GameObject wall;
     public GameObject player;
+    public GameObject door;
 
+    private GameObject currentPlayer;
+    private GameObject level;
+    
     private const string FILE_NAME = "LevelNum.txt";
     private const string FILE_DIR = "/Levels/";
     private string FILE_PATH;
     
-    private GameObject currentPlayer;
-    private GameObject level;
     
     private int currentLevel = 0;
     public float xOffset;
     public float yOffset;
-
+    
     public int CurrentLevel
     {
         get { return currentLevel; }
@@ -48,28 +50,38 @@ public class ASCII : MonoBehaviour
 
         string newPath = FILE_PATH.Replace("Num", currentLevel + "");
         
+        //load all the lines out of the file into an array of strings
         string[] fileLines = File.ReadAllLines(newPath);
 
+        //for loop to go through each line
         for (int yPos = 0; yPos < fileLines.Length; yPos++)
         {
+            //get each line out of the array
             string lineText = fileLines[yPos];
 
+            //turn the current line into an array of chars
             char[] lineChars = lineText.ToCharArray();
-
+            
+            //loop through each char
             for (int xPos = 0; xPos < lineChars.Length; xPos++)
             {
+                //get current char
                 char c = lineChars[xPos];
 
+                //make a variable for a new Gameobject
                 GameObject newObj;
 
                 switch (c)
                 {
-                    case 'w':
-                        newObj = Instantiate<GameObject>(wall);
-                        break;
-                    case 'p':
+                    case 'p': //if its a p make new player
                         newObj = Instantiate<GameObject>(player);
                         currentPlayer = newObj;
+                        break;
+                    case 'w': //if its a make wall
+                        newObj = Instantiate<GameObject>(wall);
+                        break;
+                    case 'D':
+                        newObj = Instantiate<GameObject>(door);
                         break;
                     default:
                         newObj = null;
@@ -89,6 +101,12 @@ public class ASCII : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void Exit()
+    {
+        CurrentLevel++;
+        Debug.Log("Hit Door");
     }
     // Update is called once per frame
     void Update()
